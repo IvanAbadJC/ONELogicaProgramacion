@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinación</title>
+</head>
+<body>
+    <h3>Juego de la adivinación</h3>
+</body>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }
+
+    function imprimir(texto) {
+        document.write("<big>" + texto + "</big>");
+        saltarLinea();
+    }
+
+    function sorteo(n) {
+        return Math.round(Math.random() * n);
+    }
+
+    var numeroGenerado = sorteo(15);
+    var numeroSolicitado = parseInt(prompt("Ingresa un número entre 0-10"));
+
+    if (numeroGenerado == numeroSolicitado){
+        imprimir("¡Acertado!")
+    } else {
+        if(numeroGenerado > numeroSolicitado) {
+            imprimir("Incorrecto, el número era mayor al ingresado. El número es: " + numeroGenerado);
+        } else {
+            imprimir("Incorrecto, el número era menor al ingresado. El número es: " + numeroGenerado);
+        }
+    }
+</script>
+</html>

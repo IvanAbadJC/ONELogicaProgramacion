@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var anio = 2023;
+    var saltolinea = "<br>";
+
+    document.write("<b>Realizado con Texto</b><br>")
+    document.write("La edad de Fulanito es:");
+    document.write("<br>");
+    document.write("23");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<b>Realizado con programación</b><br>")
+    document.write("La edad de Fulanito es:");
+    document.write("<br>");
+    document.write(anio-2000);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Fulanito nació en el año:");
+    document.write("<br>");
+    document.write(anio-23);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("El año actual es: " + (anio));
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("<b>Operaciones</b>");
+    document.write(saltolinea);
+    var promedio = (13+16+18)/3;
+    document.write("Jimena tiene: " + (anio-2010) + " años");
+    document.write(saltolinea);
+    document.write("Laura tiene: " + (anio-2007) + " años");
+    document.write(saltolinea);
+    document.write("Paola tiene: " + (anio-2005) + " años");
+    document.write(saltolinea);
+    document.write("El promedio de las edades de las 3 mujeres es: " + Math.round(promedio));
+
+
+    function saltoLinea() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+    saltoLinea();
+    document.write("<b>Funciones</b>");
+    saltoLinea();
+    document.write("Estos");
+    saltoLinea();
+    document.write("son");
+    saltoLinea();
+    document.write("saltos de línea");
+    saltoLinea();
+    document.write("con");
+    saltoLinea();
+    document.write("funciones de javascript.");
+    saltoLinea();
+    saltoLinea();
+
+    function imprimir(texto) {
+        document.write(texto);
+        saltoLinea();
+    }
+    imprimir("Este mensaje fue impreso con una función de javascript.");
+    imprimir("Dicha función genera el texto deseado y realiza saltos de línea automáticos.")
+</script>
+</html>

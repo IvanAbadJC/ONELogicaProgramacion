@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡No hay ingredientes repetidos aquí!</title>
+</head>
+<body>
+    <h3><b>¡No hay ingredientes repetidos aquí!</b></h3>
+</body>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }
+
+    function imprimir(texto) {
+        document.write(texto);
+        saltarLinea();
+    }
+
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+
+    for(var i = 0; i < cantidad; i++) {
+        var ingrediente = prompt("Informe el ingrediente " + (i+1));
+        if(!ingredientes.includes(ingrediente)) {
+            ingredientes.push(ingrediente);
+        }
+    }
+    imprimir(ingredientes);
+    console.log(ingredientes);
+</script>
+</html>

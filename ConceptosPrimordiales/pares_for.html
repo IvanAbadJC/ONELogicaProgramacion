@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pares 1-100</title>
+</head>
+<body>
+    <h3>Números pares del 1 al 100</h3>
+</body>
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(texto) {
+        document.write(texto);
+        saltarLinea();
+    }
+
+    var contador = 1;
+    while(contador <= 100) {
+        if(contador % 2 == 0) {
+            imprimir(contador);
+        }
+        contador++;
+    }
+
+    imprimir("Fin.");
+</script>
+</html>
