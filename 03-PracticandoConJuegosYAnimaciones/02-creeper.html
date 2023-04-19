@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Creeper</title>
+</head>
+<body style="height: 90vh; background-color: rgb(210, 209, 209); display: flex; justify-content: center; align-items: center;">
+    <canvas width="600", height="400"></canvas>
+</body>
+
+<script>
+    var canvas = document.querySelector('canvas');
+    var pincel = canvas.getContext('2d');
+    var creeperCabezaX =  350;
+    var creeperCabezaY = 300;
+    var creeperOjosX = 90;
+    var creeperOjosY = 90;
+    var creeperNarizX = 70;
+    var creeperNarizY = 100;
+    var creeperBocaX = 40;
+    var creeperBocaY = 110;
+
+
+    pincel.fillStyle = '#ffffff';
+    pincel.fillRect(0, 0, 600, 400);
+
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(125, 50, creeperCabezaX, creeperCabezaY);
+
+    /*
+    Nariz:
+
+        Paso 1: Obtener la mitad del canvas:
+            canvasMitadX = 600 / 2 = 300
+            canvasMitadY = 400 / 2 = 200
+        Paso 2: Obtener el inicio de la nariz en X. 
+            inicioNarizX = canvasMitadX - creeperNarizX/2 = 265
+        Paso 3: Obtener inicio de la nariz en Y.
+            inicioBocaY = canvasMitadY
+    */
+    pincel.fillStyle = 'black';
+    pincel.fillRect(265, 200, creeperNarizX, creeperNarizY);
+
+    /*
+    Boca:
+        Paso 1: Obtener la mitad del canvas:
+            canvasMitadX = 600 / 2 = 300
+            canvasMitadY = 400 / 2 = 200
+        Paso 2: Obtener el inicio de la boca en X. 
+            inicioBoca1X = canvasMitadX - creeperBocaX - creeperNarizX/2 = 225
+            inicioBoca2X = canvasMitadX + creeperNarizX/2 = 335
+        Paso 3: Obtener inicio de la boca en Y.
+            inicioBocaY = canvasMitadY + narizY/2 = 250
+        Paso 4: Ajustar boca, hay un pequeño offset en Y, se descubre que son 10 px.
+            inicioBocaYreal = 250 - 10 = 240.
+
+    */
+    pincel.fillStyle = 'black';
+    pincel.fillRect(225, 240, creeperBocaX, creeperBocaY);
+
+    pincel.fillStyle = 'black';
+    pincel.fillRect(335, 240, creeperBocaX, creeperBocaY);
+
+    /*
+    Ojos: 
+        Paso 1: Obtener la mitad del canvas:
+            canvasMitadX = 600 / 2 = 300
+            canvasMitadY = 400 / 2 = 200
+        Paso 2: Obtener el inicio de los ojos en X:
+            inicioOjo1X = canvasMitadX - creeperNarizX/2 - creeperOjosX = 175
+            inicioOjo2X = canvasMitadX + creeperNarizX/2 = 335
+        Paso 3: Obtener el inicio de los ojos en Y:
+            inicioOjosY = canvasMitadY - creeperOjosY = 110
+    */
+    pincel.fillStyle = 'black';
+    pincel.fillRect(175, 110, creeperOjosX, creeperOjosY);
+
+    pincel.fillStyle = 'black';
+    pincel.fillRect(335, 110, creeperOjosX, creeperOjosY);
+
+</script>
+</html>

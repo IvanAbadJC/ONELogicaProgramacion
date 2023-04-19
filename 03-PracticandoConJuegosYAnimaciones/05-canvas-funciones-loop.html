@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Cuadrados con funciones</title>
+</head>
+<body style="height: 90vh; background-color: rgb(210, 209, 209); display: flex; justify-content: center; align-items: center; flex-direction: column; row-gap: 10px;">
+    <canvas width="600", height="400"></canvas>
+    <button>Generar colores random</button>
+</body>
+
+<script>
+    var canvas = document.querySelector('canvas');
+    var pincel = canvas.getContext('2d');
+    var boton = document.querySelector('button');
+
+    pincel.fillStyle = '#ffffff';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCuadrados(x, y, longitudX, longitudY, color) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, longitudX, longitudY);
+    }
+
+    function generarColorRandom() {
+        const letrasNumeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let color = '#';
+        for(let i = 0; i < 6; i++) {
+            color = color.concat(letrasNumeros[Math.round(Math.random()*letrasNumeros.length)]);
+        }
+        return color;
+    }
+
+    function generaCuadradosDinamicos() {
+        for(let i = 0; i < canvas.width; i=i+50) {
+            for(let j = 0; j < canvas.height; j=j+50) {
+                dibujarCuadrados(i, j, 50, 50, generarColorRandom());
+            }
+        }
+    }
+
+    boton.onclick = generaCuadradosDinamicos;
+    
+</script>
+</html>
